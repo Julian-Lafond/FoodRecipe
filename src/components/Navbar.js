@@ -1,22 +1,32 @@
 import {useState } from "react"
 import Sidebar from "./Sidebar"
 
+import {faHome, faList, faCog } from "@fortawesome/free-solid-svg-icons"
+
 export default function Navbar(){
     const [showSideBar, setShowSidebar] = useState(false)
     const links = [
         {
             name: "Home",
-            path: "/"
+            path: "/",
+            icon: faHome
         },
         {
             name: "Recipes",
-            path: "/recipes"
+            path: "/recipes",
+            icon: faList
         },
         {
             name: "Settings",
-            path: "/settings"
+            path: "/settings",
+            icon: faCog
         }
     ]
+
+    function closeSidebar(){
+        setShowSidebar(false)
+    }
+
     return(
         <>
         <div className = "navbar container">
@@ -36,7 +46,8 @@ export default function Navbar(){
                 <div className="bar"></div>
             </div>
         </div>
-        <Sidebar links={links}/>
+        {showSideBar && <Sidebar close={closeSidebar} links={links}/>}
+
         </>
     )
 }
