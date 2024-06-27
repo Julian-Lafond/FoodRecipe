@@ -3,7 +3,7 @@ import HeroSection from "./components/HeroSection";
 import ImproveSkills from "./components/ImprovedSkills";
 import QuoteSection from "./components/QuoteSection";
 import CheifSection from "./components/ChiefSection";
-
+import Footer from "./components/Footer";
 function App() {
   return (
     <div className="App">
@@ -14,6 +14,7 @@ function App() {
         <QuoteSection />
         <CheifSection />
       </div>
+      <Footer />
     </div>
   );
 }
